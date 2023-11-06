@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div 내용 뒤 div요소뒤가 아님!!!!!!!!!!  */
+        div::before {
+            content: "금요일";
+        }
+        div::after {
+            content: "힘내세요!!";
+            background-color: yellow;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>div입니다.</div>
+</body>
+</html>

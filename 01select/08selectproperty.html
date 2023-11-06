@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 속성선택자 [속성명] 
+            [속성명="abc"] 속성값이 "abc"인 요소
+            [속성명^="a"] 속성값이 "a"로 시작하는 요소
+            [속성명$="a"] 속성값이 "a"로 끝하는 요소
+            [속성명*="a"] 속성값에 "a"가 포함되는 요소
+        */
+        [class="bbb"] {
+            background-color: aquamarine;
+        }
+        [class*="b"] {
+            text-decoration: underline;
+        }
+        input[type="text"] { width: 300px; background-color: red;}
+    </style>
+</head>
+<body>
+    <div class="box">div입니다.
+        <p>div하위 p</p>
+        <h2 class="aa">div하위 h2</h2>
+    </div>
+    <p>p입니다.</p>
+    <h2 class="bbb">h2입니다.</h2>
+    <p>p입니다.</p>
+    <input type="text">
+    <input type="checkbox" >
+    <input type="radio">
+</body>
+</html>

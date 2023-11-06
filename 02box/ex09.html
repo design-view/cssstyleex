@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 300px;
+            background-color: aliceblue;
+            text-align: center;
+        }
+        #box1 span {
+            background-color: aqua;
+        }
+        #box1 h1 {
+            background-color: red;
+            width: 300px;
+            margin: auto;
+        }
+        #box2 {
+            background-color: bisque;
+            text-align: center;
+        }
+        #box2 ul:nth-child(1) {
+            float: left;
+        }
+        #box2 h1 {
+            display: inline-block;
+            background-color: red;
+        }
+        #box2 ul:nth-child(3) {
+            float: right;
+        }
+        #box3 {
+            background-color: aquamarine;
+        }
+        #box3 h1 {
+            float: left;
+        }
+        #box3 ul {
+            float: right;
+        }
+        #box3::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #box4 h1::before {
+            content: "before자리";
+        }
+        #box4 h1::after {
+            content: "after자리";
+        }
+        li:hover::after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <span>인라인 span입니다.</span>
+        <h1>블럭 h1입니다.</h1>
+    </div>
+    <div id="box2">
+        <ul>
+            <li>leftmenu1</li>
+            <li>leftmenu2</li>
+            <li>leftmenu3</li>
+        </ul>
+        <h1>green</h1>
+        <ul>
+            <li>rightmenu1</li>
+            <li>rightmenu2</li>
+            <li>rightmenu3</li>
+        </ul>
+      
+    </div>
+    <div id="box3">
+        <h1>green</h1>
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+        </ul>
+       
+    </div>
+    <div id="box4">
+        <h1>green</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 인풋에 포커스가 가면 배경색을 원하는 색으로 지정 */
+        input:focus {
+            background-color: antiquewhite;
+        }
+        /* 체크된 input옆에 있는 span은 글자크기를 20px로 지정 */
+        input:checked + span {
+            font-size: 20px;
+        }
+        /* 사용할수 없는input 선택 */
+        input:disabled {
+            font-size: 11px;
+        }
+        /* 사용할수 있는 input선택 */
+        input:enabled {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>폼 선택자 연습</h2>
+        <form action="">
+            <p> 이름 : <input type="text" name="userName" /></p>
+            <p> 아이디  : <input type="text" name="userId" /></p>
+            <p> 취미 : 
+                <input type="checkbox" name="hobby1"><span>독서</span>
+                <input type="checkbox" name="hobby2"><span>공부</span>
+            </p>
+            <p>
+                <input type="button" value="전송1" disabled />
+                <input type="button" value="전송2" />
+            </p>
+        </form>
+    </div>
+</body>
+</html>

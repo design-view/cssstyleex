@@ -4,6 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* css리셋작성 */
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        a { text-decoration: none; color: inherit;}
+        h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+        li { list-style: none; }
+
+        body {
+            /* font설정 */
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            /* 배경색 설정 */
+            background-color: #eee;
+            padding: 16px;
+        }
+        #header {
+            background-color: #fff;
+            height: 150px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        #headerTitle {
+            height: 120px;
+            padding-top: 25px;
+        }
+        #headerMenu {
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            line-height: 30px;
+        }
+        #headerMenu ul {
+            float: left;
+        }
+        #headerMenu ul li {
+            float: left;
+        }
+        #headerMenu > a {
+            float: right;
+        }
+        #headerMenu a {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #left {
+            width: 75%;
+            float: left;
+            padding-right: 16px;
+        }
+        #right {
+            width: 25%;
+            float: left;
+        }
+        .whitebox {
+            background-color: #fff;
+            margin-bottom: 16px;
+            padding: 16px;
+        }
+        .graybox {
+            background-color: #666;
+            color: #fff;
+            margin: 10px 0;
+        }
+        div.graybox {
+            padding: 16px;
+            height: 150px;
+        }
+        .graybox li {
+            padding: 12px 8px;
+        }
+        #main::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #footer {
+           background-color: #666;
+           color: #fff;
+           text-align: center;
+           padding: 20px; 
+        }
+    </style>
 </head>
 <body>
     <!-- 상단영역 -->

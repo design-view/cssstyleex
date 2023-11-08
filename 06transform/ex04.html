@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #333;
+            overflow: hidden;
+            position: relative;
+        }
+        #item {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 100%;
+            background-color: blue;
+            transition: 0.5s;
+        }
+        #container:hover #item {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="item"></div>
+    </div>
+</body>
+</html>

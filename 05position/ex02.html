@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { padding: 0; margin: 0; box-sizing: border-box;}
+        #container {
+            width: 800px;
+            height: 500px;
+            background-color: aquamarine;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #item {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            position: absolute;
+            top: 0;
+            left: -200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        부모div
+        <div id="item">자식div</div>
+    </div>
+</body>
+</html>

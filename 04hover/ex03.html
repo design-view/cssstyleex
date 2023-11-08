@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { padding: 0; margin: 0; box-sizing: border-box; }
+        img { vertical-align: top; }
+        li { list-style: none;}
+
+        body {
+            background-color: #444;
+            color: #fff;
+        }
+        #wrap {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        #wrap > div {
+            padding: 50px 0;
+        }
+        h1 {
+            padding-bottom: 30px;
+        }
+        li:first-child {
+            margin-right:5%;
+        }
+        li {
+            float: left;
+            width: 47.5%;
+            background-color: red;
+            position: relative;
+            overflow: hidden;
+        }
+        li img {
+            width: 100%;
+        }
+        .dark {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            transition: 0.5s;
+        }
+        h1 { font-size: 42px; }
+        h2 { font-size: 36px; transition: 0.5s; }
+        p { font-size: 22px; transition: 0.5s;}
+        ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #hover1 li {
+            text-align: center;
+        }
+        #hover1 h2 {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #hover1 p {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+        /* 아이디 hover1인 요소 안에 있는 li요소에 마우스를 올려을때
+        li요소 안에있는 h2 스타일 변경 */
+        #hover1 li:hover h2 {
+            top: 36%;
+        }
+        #hover1 li:hover p {
+            top: 50%;
+            opacity: 1;
+        }
+        li::before { transition: 0.5s;}
+        li::after { transition: 0.5s;}
+        #hover1 li::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            right: 50%;
+            top: 30px;
+            bottom: 30px;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        #hover1 li:hover::before {
+            left: 30px;
+            right: 30px;
+        }
+        #hover1 li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 50%;
+            bottom: 50%;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        #hover1 li:hover::after {
+            top: 30px;
+            bottom: 30px;
+        }
+      
+        #hover2 .dark {
+            background-color: rgba(0,0,0,0);
+        }
+        #hover2 p { opacity: 0;}
+        #hover2 h2 {
+            text-align: center;
+            padding-top: 20%;
+        }
+        #hover2 li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            bottom: 30px;
+            right: 30px;
+            border: 1px solid #fff;
+            transform: scale(1.3);
+        }
+        #hover2 img {
+            transform: scale(1.3);
+            transition: 0.5s;
+        }
+        /* li에 마우스 올렸을때 img 요소 scale(1) */
+        #hover2 li:hover img {
+            transform: scale(1);
+        }
+        /* ::after요소 scale(1) */
+        #hover2 li:hover::after {
+            transform: scale(1);
+        }
+        #hover2 li:hover .dark {
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        #hover3 .dark { background-color: rgba(0,0,0,0); 
+            text-align: center;}
+        #hover3 h2 {
+            padding-top:24%;
+        }
+        #hover3 p {padding-top: 8%; opacity: 1;}
+        #hover3 li::after {
+            content: "";
+            display: block;
+            height: 1px;
+            left: 30px;
+            right: 30px;
+            position: absolute;
+            background-color: #fff;
+            top: 50%;
+        }
+        #hover3 li::before {
+            content: "";
+            display: block;
+            height: 1px;
+            left: 30px;
+            right: 30px;
+            position: absolute;
+            background-color: #fff;
+            top: 50%;
+            z-index: 1;
+        }
+        #hover3 li:hover::after {
+            transform: rotate(45deg);
+        }
+        #hover3 li:hover::before {
+            transform: rotate(-45deg);
+        }
+        #hover3 li:hover .dark {
+            background-color: rgba(0,0,0,0.5);
+        }
+        #hover3 li:hover h2 {
+            padding-top: 28%;
+        }
+        #hover3 li:hover p {
+            padding-top: 2%;
+        }
+        #hover4 .dark {
+            background-color: rgba(0,0,0,0);
+        }
+        #hover4 h2 {
+            padding-left: 50px;
+            padding-top: 16%;
+        }
+        #hover4 p {
+            padding-left: 50px;
+            position: absolute;
+            top: 34%;
+            left: 100%;
+        }
+        #hover4 li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 6px;
+            left: 50px;
+            right: calc(100% - 50px);
+            background-color: #fff;
+            top: 34%;
+        }
+        #hover4 li:hover::after {
+            right: 50px;
+        }
+        #hover4 li:hover p {
+            left: 0;
+        }
+        #hover4 li:hover .dark {
+            background-color: rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="hover1">
+            <h1>Hover01</h1>
+            <ul>
+                <li>
+                    <img src="images/1.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/2.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="hover2">
+            <h1>Hover02</h1>
+            <ul>
+                <li>
+                    <img src="images/3.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/4.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="hover3">
+            <h1>Hover03</h1>
+            <ul>
+                <li>
+                    <img src="images/1.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/2.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="hover4">
+            <h1>Hover04</h1>
+            <ul>
+                <li>
+                    <img src="images/3.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/4.jpg" alt="">
+                    <div class="dark">
+                        <h2>hover effect</h2>
+                        <p>greenweb</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

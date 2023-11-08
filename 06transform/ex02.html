@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body > div {
+            width: 200px;
+            height: 200px;
+            background-color: lightgrey;
+            margin: 50px;
+            float: left;
+            position: relative;
+        }
+        div div {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            transition: 0.5s;
+        }
+        body > div:nth-child(1) div:hover {
+            transform: translateX(100px);
+        }
+        body > div:nth-child(2) div:hover {
+            transform: translateY(100px);
+        }
+        body > div:nth-child(3) div:hover {
+            transform: scale(2,1);
+        }
+        body > div:nth-child(4) div:hover {
+            transform: scale(1,2);
+        }
+        body > div:nth-child(5) div:hover {
+            transform: skewX(45deg);
+        }
+        body > div:nth-child(6) div:hover {
+            transform: skewY(45deg);
+        }
+        body > div:nth-child(7) div:hover {
+            transform: rotate(45deg);
+        }
+        body > div:nth-child(8) div:hover {
+            transform: scale(2) translate(50px,50px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>
